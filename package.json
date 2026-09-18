@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
+    "build" : "prisma generate",
     "dev": "tsx watch src/server.js",
+    "postinstall": "prisma generate",
     "start": "tsx src/server.js"
   },
   "keywords": [],
