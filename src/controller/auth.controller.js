@@ -32,6 +32,7 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
     const { email, password } = req.body;
+    console.log(email, password)
     try {
         const {user, token } = await loginUser(email, password);
         res.cookie('token',token, {
@@ -43,7 +44,10 @@ export const login = async (req, res) => {
         res.status(200).json({
             status: 200,
             message: 'User logged in successfully',
-            data: { user }
+            data: { 
+                user : user,
+                token : token
+             }
         });
     } catch (error) {
         res.status(500).json({

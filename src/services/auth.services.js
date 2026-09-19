@@ -39,6 +39,7 @@ export const loginUser = async (email, password) => {
                 email 
             },
         });
+        console.log(userExist)
         if (!userExist) {
             throw new Error('User does not exist');
         }   
